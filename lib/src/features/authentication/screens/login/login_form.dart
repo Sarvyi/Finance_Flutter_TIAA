@@ -53,7 +53,7 @@ class LoginForm extends StatelessWidget {
                           children: [
                             Text(
                               tForgetPassword,
-                              style: Theme.of(context).textTheme.displayMedium,
+                              style: Theme.of(context).textTheme.bodyLarge,
                             ),
                             Text(
                               tForgetPassword,
@@ -63,6 +63,7 @@ class LoginForm extends StatelessWidget {
                               height: 30,
                             ),
                             ModelBottomContainerWidget(btnIcon: Icons.mail_outline_rounded,title: tEmail,subtitle: tResetViaEmail,onTap: () {},),
+                            const SizedBox(height: 20,),
                             ModelBottomContainerWidget(btnIcon: Icons.mobile_friendly_outlined,title: "Phone No",subtitle: tResetViaEmail,onTap: () {},),
                           ]),
                     ),
@@ -95,8 +96,8 @@ class ModelBottomContainerWidget extends StatelessWidget {
       onTap: () {},
       child: Container(
         padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10)),
+        // decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10))),
+        //     borderRadius: BorderRadius.circular(10)),
         color: Colors.grey.shade200,
         child: Row(children: [
           Icon(btnIcon,size: 60,),
