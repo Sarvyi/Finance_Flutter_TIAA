@@ -2,8 +2,11 @@ import 'package:auth_ref/src/constants/colors.dart';
 import 'package:auth_ref/src/constants/image_strings.dart';
 import 'package:auth_ref/src/constants/sizes.dart';
 import 'package:auth_ref/src/constants/text_strings.dart';
+import 'package:auth_ref/src/features/authentication/controllers/signup_controller.dart';
 import 'package:auth_ref/src/features/authentication/screens/login/login_form_header.dart';
+import 'package:auth_ref/src/features/authentication/screens/signup/signup_form_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SingUpScreen extends StatelessWidget {
   const SingUpScreen({super.key});
@@ -11,9 +14,13 @@ class SingUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final size = MediaQuery.of(context).size;
+
+    bool isDarkMode =
+        MediaQuery.of(context).platformBrightness == Brightness.dark;
+
     return SafeArea(
       child: Scaffold(
-        backgroundColor: tPrimaryColor,
+        backgroundColor: isDarkMode == true ? tSecondaryColor : tPrimaryColor,
         body: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.all(20),
@@ -28,43 +35,7 @@ class SingUpScreen extends StatelessWidget {
                     child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    TextFormField(
-                      decoration: const InputDecoration(
-                          label: Text("FullName"),
-                          prefixIcon: Icon(Icons.person_outline_outlined)),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                          label: Text(tEmail), prefixIcon: Icon(Icons.email)),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                          label: Text(tPassword),
-                          prefixIcon: Icon(Icons.fingerprint)),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                          label: Text("Phone No."),
-                          prefixIcon: Icon(Icons.phone)),
-                    ),
-
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                            onPressed: () {},
-                            child: Text(tSignUp.toUpperCase()))),
+                    SignUpForm(),
                     const Text("OR"),
                     const SizedBox(
                       height: tFormHeight - 20,
