@@ -211,7 +211,8 @@ class _AddScreenState extends State<AddScreen> {
         focusNode: amount_,
         controller: amountC,
         decoration: InputDecoration(
-          contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           labelText: 'amount',
           labelStyle: TextStyle(fontSize: 17, color: Colors.grey.shade500),
           enabledBorder: OutlineInputBorder(
@@ -219,7 +220,8 @@ class _AddScreenState extends State<AddScreen> {
               borderSide: const BorderSide(width: 2, color: tBoxColorButton)),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(width: 2, color: tFinManagementMainColor)),
+              borderSide:
+                  const BorderSide(width: 2, color: tFinManagementMainColor)),
         ),
       ),
     );
@@ -232,7 +234,8 @@ class _AddScreenState extends State<AddScreen> {
         focusNode: ex,
         controller: expalinC,
         decoration: InputDecoration(
-          contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           labelText: 'explain',
           labelStyle: TextStyle(fontSize: 17, color: Colors.grey.shade500),
           enabledBorder: OutlineInputBorder(
@@ -275,7 +278,7 @@ class _AddScreenState extends State<AddScreen> {
                         children: [
                           Container(
                             width: 40,
-                            child: Image.asset('images/${e}.png'),
+                            child: Image.asset('assets/images/graph/${e}.png'),
                           ),
                           const SizedBox(width: 10),
                           Text(
@@ -292,7 +295,7 @@ class _AddScreenState extends State<AddScreen> {
                     children: [
                       Container(
                         width: 42,
-                        child: Image.asset('images/${e}.png'),
+                        child: Image.asset('assets/images/graph/${e}.png'),
                       ),
                       const SizedBox(width: 5),
                       Text(e)

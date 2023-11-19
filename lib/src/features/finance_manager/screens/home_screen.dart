@@ -1,3 +1,4 @@
+import 'package:auth_ref/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:auth_ref/src/features/finance_manager/models/list_data.dart';
@@ -89,7 +90,8 @@ class _HomeState extends State<Home> {
     return ListTile(
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(5),
-        child: Image.asset('images/${history.name}.png', height: 40),
+        child:
+            Image.asset('assets/images/graph/${history.name}.png', height: 40),
       ),
       title: Text(
         history.name,
@@ -135,7 +137,7 @@ class _HomeState extends State<Home> {
                 children: [
                   Positioned(
                     top: 35,
-                    left: 340,
+                    right: 10,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(7),
                       child: Container(
@@ -181,14 +183,13 @@ class _HomeState extends State<Home> {
         ),
         Positioned(
           top: 140,
-          left: 37,
           child: Container(
             height: 170,
             width: 320,
             decoration: BoxDecoration(
               boxShadow: const [
                 BoxShadow(
-                  color: Color.fromRGBO(47, 125, 121, 0.3),
+                  color: tSummaryIndicator,
                   offset: Offset(0, 6),
                   blurRadius: 12,
                   spreadRadius: 6,

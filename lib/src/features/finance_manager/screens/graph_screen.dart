@@ -129,7 +129,8 @@ class _StatisticsState extends State<Statistics> {
             return ListTile(
               leading: ClipRRect(
                 borderRadius: BorderRadius.circular(5),
-                child: Image.asset('images/${a[index].name}.png', height: 40),
+                child: Image.asset('assets/images/graph/${a[index].name}.png',
+                    height: 40),
               ),
               title: Text(
                 a[index].name,
