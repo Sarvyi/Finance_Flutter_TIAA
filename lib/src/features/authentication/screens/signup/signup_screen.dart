@@ -35,7 +35,7 @@ class SingUpScreen extends StatelessWidget {
                     child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SignUpForm(),
+                    const SignUpForm(),
                     const Text("OR"),
                     const SizedBox(
                       height: tFormHeight - 20,

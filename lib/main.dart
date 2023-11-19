@@ -1,12 +1,18 @@
 import 'package:auth_ref/firebase_options.dart';
 import 'package:auth_ref/src/features/authentication/repository/authentication_repository.dart';
 import 'package:auth_ref/src/features/authentication/screens/splash_screen/splash_screen.dart';
+import 'package:auth_ref/src/features/finance_manager/models/add_date.dart';
 import 'package:auth_ref/src/utils/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(AdddataAdapter());
+  await Hive.openBox<Add_data>('data');
+
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
       .then((value) => Get.put(AuthenticationRepository()));
@@ -18,7 +24,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppHome();
+    return const AppHome();
   }
 }
 

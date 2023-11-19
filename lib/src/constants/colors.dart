@@ -12,3 +12,7 @@ const tDarkColor = Color(0xFF3A3A59);
 const tOnBoardingPage1Color = Colors.white;
 const tOnBoardingPage2Color = Color(0xFFFDDCDF);
 const tOnBoardingPage3Color = Color(0xFFFFDCBD);
+
+// Fin management page
+const tFinManagementMainColor = Color(0xff368983);
+const tBoxColorButton = Color(0xffC5C5C5);
